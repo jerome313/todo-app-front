@@ -1,6 +1,6 @@
 // ./react-redux-client/src/actions/todoActions.js
 
-const apiUrl = "/api/";
+const apiUrl = "https://todo-api-mern.herokuapp.com/api/";
 
 export const toggleAddBook = () => {
   return {
@@ -162,6 +162,8 @@ export const hideEditModal = () => {
 export const editTodo = (todo) => {
     return (dispatch) => {
       dispatch(editTodoRequest(todo));
+      console.log(apiUrl);
+      console.log(todo);
       return fetch(apiUrl, {
         method:'put',
         body:todo
